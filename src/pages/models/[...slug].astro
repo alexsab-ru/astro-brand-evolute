@@ -65,7 +65,7 @@ const salonsPhone = salons.map((salon: any) => salon.phone).filter(phone => phon
       <FeedbackForm 
         title="Записаться на тест-драйв" 
         imageUrl={sections.length > 0
-          ? sections[1]?.images[0].url || sections[2]?.images[0].url || model.thumb
+          ? sections[0]?.images[0].url || sections[1]?.images[0].url || sections[2]?.images[0].url || model.thumb
           : model.colors[getRandomInt(0, model.colors.length)].carImage
         } 
       />
