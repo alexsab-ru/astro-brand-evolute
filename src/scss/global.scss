@@ -1,10 +1,20 @@
 @reference "tailwindcss";
 
 @layer base {
+	html {
+		scroll-behavior: smooth;
+		scrollbar-gutter: stable;
+	}
+	svg * {
+		transition-property: fill, stroke;
+	}
 	button:not(:disabled),
 	[role="button"]:not(:disabled),
 	[type="submit"]:not(:disabled) {
 		cursor: pointer;
+	}
+	a:not([class]){
+		@apply text-link underline hover:text-link-hover hover:no-underline;
 	}
 }
 
@@ -53,10 +63,6 @@ section:not(.model-section) {
 	}
 }
 
-.filter-model-link{
-	@apply text-xs sm:text-base py-2 px-2 sm:px-4 no-underline rounded-md m-0;
-}
-
 blockquote{
 	a{
 		@apply underline hover:no-underline;
@@ -80,9 +86,3 @@ blockquote{
 	clip-path: polygon(1rem 0, 100% 0, calc(100% - 1rem) 100%, 0 100%);
 }
 
-.border-t,
-.border-r,
-.border-b,
-.border-l {
-	border-color: var(--color-gray-200); /* светло-серый gray-200 */
-}
